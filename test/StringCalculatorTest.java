@@ -50,4 +50,10 @@ public class StringCalculatorTest {
         calculator.add("-1");
         calculator.add("-5,10\n-15");
     }
+    
+    @Test
+    public void multipleDelimitersAddition() {
+        assertEquals(calculator.add("1,2,3"), 6);
+        assertEquals(calculator.add("5\n2\n3"), 10);
+    }
 }
