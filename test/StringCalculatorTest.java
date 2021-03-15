@@ -42,4 +42,12 @@ public class StringCalculatorTest {
         assertEquals(calculator.add("1\n2"), 3);
         assertEquals(calculator.add("11\n13"), 24);
     }
+    
+    @Test
+    public void exceptionWithNegativeInput() {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("negative input!");
+        calculator.add("-1");
+        calculator.add("-5,10\n-15");
+    }
 }
